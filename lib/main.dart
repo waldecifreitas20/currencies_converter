@@ -1,4 +1,4 @@
-import 'package:conversor_moedas/homepage.dart';
+import 'package:conversor_moedas/app/views/homepage_view.dart';
 import 'package:flutter/material.dart';
 
 main(List<String> args) {
@@ -11,10 +11,11 @@ class AppStart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      themeMode: ThemeMode.dark,
       theme: ThemeData(
-        canvasColor: Colors.grey[800],
+        primarySwatch: Colors.amber,
+        brightness: Brightness.dark,
       ),
     );
   }

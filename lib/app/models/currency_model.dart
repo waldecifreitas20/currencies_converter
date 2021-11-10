@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 import 'dart:convert';
 
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 
 class CurrencyModel {
   final double euro;
@@ -36,13 +36,13 @@ class CurrencyModel {
     try {
       exchange = exchangies['${from}-${to}'];
       url = 'https://economia.awesomeapi.com.br/json/last/$exchange';
-      var response =
-          await get(Uri.parse(url)).then((value) => jsonDecode(value.body));
+      var response = await http
+          .get(Uri.parse(url))
+          .then((value) => jsonDecode(value.body));
 
       return response["$from$to"]["bid"];
-
-    } catch (ex) {
-      return ex.;
+    } catch (exception) {
+      throw Exception('Sem conexão com a internet!');
     }
   }
 }

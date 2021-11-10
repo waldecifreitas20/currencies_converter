@@ -32,11 +32,17 @@ class CurrencyModel {
   });
 
   static Future<dynamic> getCurrencies(String from, String to) async {
-    String exchange = exchangies['${from}-${to}'];
-    String url = 'https://economia.awesomeapi.com.br/json/last/$exchange';
-    var response =
-        await get(Uri.parse(url)).then((value) => jsonDecode(value.body));
+    String exchange, url;
+    try {
+      exchange = exchangies['${from}-${to}'];
+      url = 'https://economia.awesomeapi.com.br/json/last/$exchange';
+      var response =
+          await get(Uri.parse(url)).then((value) => jsonDecode(value.body));
 
-    return response["$from$to"]["bid"];
+      return response["$from$to"]["bid"];
+
+    } catch (ex) {
+      return ex.;
+    }
   }
 }

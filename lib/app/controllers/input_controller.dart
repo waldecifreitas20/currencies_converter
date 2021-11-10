@@ -16,12 +16,13 @@ class InputController {
     if (currencySelectedFrom == currencySelectedTo) {
       toText.text = 'R\$ ${fromText.text}';
     } else {
+      
       var textValue = await CurrencyModel.getCurrencies(
           currencySelectedFrom, currencySelectedTo);
 
       double from = double.tryParse(fromText.text) ?? 1;
       double to = double.tryParse(textValue) ?? 1;
-      String result = (from * to).toStringAsFixed(2);
+      String result = '${from * to}';
 
       toText.text = '\$ $result';
     }

@@ -20,7 +20,8 @@ class _InputValueState extends State<InputValue> {
       child: TextField(
         controller: widget.controller,
         readOnly: widget.readOnly,
-        style: TextStyle(fontSize: 20),
+        style: const TextStyle(fontSize: 20, locale: Locale('br', 'BR')),
+        enabled: true,
       ),
     );
   }

@@ -13,9 +13,8 @@ class InputController {
 
   static Future<void> convert() async {
     double from = double.tryParse(fromText.text) ?? 1;
-    if (from == 1) {
-      throw Exception('Valor de entrada inválido!');
-    } else if (currencySelectedFrom == currencySelectedTo) {
+
+    if (currencySelectedFrom == currencySelectedTo) {
       toText.text = 'R\$ ${fromText.text}';
     } else {
       try {
@@ -23,7 +22,7 @@ class InputController {
             currencySelectedFrom, currencySelectedTo);
 
         double to = double.tryParse(textValue) ?? 1;
-        String result = '${from * to}';
+        String result = (from * to).toStringAsFixed(2);
 
         toText.text = '\$ $result';
       } catch (e) {

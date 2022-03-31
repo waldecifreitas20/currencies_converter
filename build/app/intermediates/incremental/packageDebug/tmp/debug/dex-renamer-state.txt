@@ -1,4 +1,4 @@
-#Tue Nov 09 21:38:37 BRT 2021
-base.0=D\:\\Work Enviroment\\Projects\\Flutter\\currencies_converter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Wed Mar 30 09:46:18 BRT 2022
+base.0=C\:\\Users\\ATI\\Documents\\GitHub\\Flutter\\currencies_converter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
